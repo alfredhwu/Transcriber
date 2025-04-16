@@ -1,0 +1,7 @@
+.venv/
+outputs/
+test/
+post-processing/
+recordings/
+Video/
+videos/

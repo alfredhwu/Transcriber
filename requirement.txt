@@ -1,0 +1,5 @@
+funasr
+pydub
+moviepy
+torch
+torchaudio
