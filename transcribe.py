@@ -7,18 +7,21 @@ from funasr.auto.auto_model import merge_vad
 # paraformer-zh is a multi-functional asr model
 # use vad, punc, spk or not as you need
 model = AutoModel(
-                    # model="paraformer-zh",  
-                    model="iic/speech_seaco_paraformer_large_asr_nat-zh-cn-16k-common-vocab8404-pytorch",
+                    model="paraformer-zh",  
+                    # model="iic/speech_seaco_paraformer_large_asr_nat-zh-cn-16k-common-vocab8404-pytorch",
                     # model="iic/speech_paraformer-large-vad-punc_asr_nat-zh-cn-16k-common-vocab8404-pytorch",
                     # model="iic/Whisper-large-v3",
                     vad_model="fsmn-vad",  
                     vad_kwargs={"max_single_segment_time": 30000},
                     punc_model="ct-punc", 
                     spk_model="cam++", 
-                    # model_revision="v2.0.9",
-                    # vad_model_revision="v2.0.4",
-                    # punc_model_revision="v2.0.4",
-                    # spk_model_revision="v2.0.2",
+                    model_revision="v2.0.9",
+                    vad_model_revision="v2.0.4",
+                    punc_model_revision="v2.0.4",
+                    spk_model_revision="v2.0.2",
+                    disable_update=True, ## dont update model every time
+                    device = "cuda:0", ## cuda is the default
+                    # ncpu = 4, ## default 4
                     # disable_update=True, ## disable update to avoid downloading models
                     # disable_log = True,
                     disable_pbar = True,
